@@ -63,11 +63,22 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  - Check the network and identify where the error could be
+  {#<NameError: uninitialized constant ToysController::Toys>}
+  - Change Toys to Toy
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  - Check the console and identify the error-type
+  {#<Uncaught (in promise) SyntaxError: Unexpected end of JSON input>}
+  - render the response in json format
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  - Check the console and identify the error-type
+  {#<DELETE http://localhost:4000/toys/1 404 (Not Found)>}
+  - Check the network and identify where the error could be
+  {#<ActionController::RoutingError: No route matches [DELETE] "/toys/1">}
+  - Add the destroy routing in routes.rb
